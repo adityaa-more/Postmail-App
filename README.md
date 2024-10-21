@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository/ Download zip file:
    ```
    git clone https://github.com/yourusername/your-react-app.git
    cd your-react-app
