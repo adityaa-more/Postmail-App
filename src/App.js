@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MailHistory from "./components/MailHistory";
+import ComposeMail from "./components/ComposeMail";
+import Login from "./components/Login";
+import Sidebar from "./components/Sidebar";
+import { Box } from "@mui/material";
+import MailDetail from "./components/MailDetail";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Box sx={{ display: "flex" }}>
+        <Sidebar />
+        <Box component="main" sx={{ flexGrow: 1, padding: 3 }}>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/mails" element={<MailHistory />} />
+            <Route path="/compose" element={<ComposeMail />} />
+            <Route path="/mail/:id" element={<MailDetail />} />{" "}
+            {/* New route for mail details */}
+            {/* Add more routes as needed */}
+          </Routes>
+        </Box>
+      </Box>
+    </Router>
   );
-}
+};
 
 export default App;
