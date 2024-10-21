@@ -1,4 +1,4 @@
-# My React Application
+# PostMail Application
 
 ## Installation
 
